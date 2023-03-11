@@ -1,0 +1,1 @@
+{"version":3,"file":"./style-index.css","mappings":";;;AACA;EACI;EACA,gBAHI;AAGR,C","sources":["webpack://myblock/./src/style.scss"],"sourcesContent":["$color: blue;\r\n.wp-block-genius-myblock {\r\n    font-size:100px;\r\n    background: $color;\r\n}"],"names":[],"sourceRoot":""}

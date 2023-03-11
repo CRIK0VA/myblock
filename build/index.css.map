@@ -1,0 +1,1 @@
+{"version":3,"file":"index.css","mappings":";;;AAAA;EACI;AACJ,C","sources":["webpack://myblock/./src/editor.scss"],"sourcesContent":[".wp-block-genius-myblock {\r\n    background: red;\r\n}"],"names":[],"sourceRoot":""}
