@@ -1,1 +1,1 @@
-{"version":3,"file":"index.css","mappings":";;;AAAA;EACC;AACD,C","sources":["webpack://myblock/./src/editor.scss"],"sourcesContent":[".wp-block-genius-myblock {\r\n\tbackground: #000;\r\n}\r\n"],"names":[],"sourceRoot":""}
+{"version":3,"file":"index.css","mappings":";;;AAAA;EACC;AACD,C","sources":["webpack://myblock/./src/editor.scss"],"sourcesContent":[".wp-block-genius-myblock {\r\n\tbackground: #f5f5f5;\r\n}\r\n"],"names":[],"sourceRoot":""}
