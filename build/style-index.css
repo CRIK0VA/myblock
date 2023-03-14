@@ -5,5 +5,14 @@
   font-size: 100px;
   background: #f5f5f5;
 }
+.wp-block-genius-myblock.genius-align-left {
+  text-align: left;
+}
+.wp-block-genius-myblock.genius-align-center {
+  text-align: center;
+}
+.wp-block-genius-myblock.genius-align-right {
+  text-align: right;
+}
 
 /*# sourceMappingURL=style-index.css.map*/
