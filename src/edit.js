@@ -12,7 +12,7 @@ export default function Edit( { attributes, setAttributes } ) {
 	return (
 		<div
 			{ ...useBlockProps( {
-				className: `${ columns }-columns`,
+				className: `the-${ columns }-columns`,
 			} ) }
 		>
 			<InspectorControls>
@@ -30,6 +30,7 @@ export default function Edit( { attributes, setAttributes } ) {
 			</InspectorControls>
 			<InnerBlocks
 				allowedBlocks={ [ 'genius/myblock' ] }
+				orientation="horizontal"
 				template={ [ [ 'genius/myblock' ], [ 'genius/myblock' ] ] }
 			/>
 		</div>

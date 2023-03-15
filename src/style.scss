@@ -1,0 +1,27 @@
+.wp-block-genius-myblocks {
+	display: flex;
+	flex-wrap: wrap;
+	justify-content: space-between;
+
+	@for $i from 1 through 4 {
+		&.the-#{$i}-columns {
+
+			.wp-block-genius-myblock {
+				width: calc(100% / #{$i} - 10px);
+			}
+
+		}
+	}
+
+	.wp-block-genius-myblock {
+		background: #f5f5f5;
+		padding: 20px;
+		border-radius: 30px;
+		box-sizing: border-box;
+		margin-bottom: 20px;
+
+		h2 {
+			margin-top: 0;
+		}
+	}
+}
