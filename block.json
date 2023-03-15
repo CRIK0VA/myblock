@@ -1,23 +1,12 @@
 {
 	"apiVersion": 2,
-	"name": "genius/myblock",
-	"title": "My Block",
+	"name": "genius/myblocks",
+	"title": "My Blocks",
 	"description": "Gutenberg Block",
 	"category": "text",
-	"icon": "admin-customizer",
-	"textdomain": "myblock",
+	"icon": "universal-access-alt",
+	"textdomain": "myblocks",
 	"editorScript": "file:./build/index.js",
 	"style": "file:./build/style-index.css",
-	"editorStyle": "file:./build/index.css",
-	"attributes": {
-		"text": {
-			"type": "string",
-			"source": "html",
-			"selector": "h1"
-		},
-		"align": {
-			"type": "string",
-			"default": "left"
-		}
-	}
+	"editorStyle": "file:./build/index.css"
 }
