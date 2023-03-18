@@ -30,6 +30,20 @@
   box-sizing: border-box;
   margin-bottom: 20px;
 }
+.wp-block-genius-myblocks > .block-editor-inner-blocks > .block-editor-block-list__layout > [data-type="genius/myblock"] .image {
+  position: relative;
+}
+.wp-block-genius-myblocks > .block-editor-inner-blocks > .block-editor-block-list__layout > [data-type="genius/myblock"] .image.is-loading img {
+  opacity: 0.2;
+}
+.wp-block-genius-myblocks > .block-editor-inner-blocks > .block-editor-block-list__layout > [data-type="genius/myblock"] .image .components-spinner {
+  position: absolute;
+  left: 0;
+  right: 0;
+  top: 0;
+  bottom: 0;
+  margin: auto;
+}
 .wp-block-genius-myblocks > .block-editor-inner-blocks > .block-editor-block-list__layout > [data-type="genius/myblock"] h2 {
   margin-top: 0;
 }

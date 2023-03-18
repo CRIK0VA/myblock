@@ -4,13 +4,22 @@ import {
 	MediaPlaceholder,
 } from '@wordpress/block-editor';
 import { __ } from '@wordpress/i18n';
+import { isBlobURL } from '@wordpress/blob';
+import { Spinner } from '@wordpress/components';
 
 export default function Edit( { attributes, setAttributes } ) {
 	const { title, description, image_id, image_url, image_alt } = attributes;
 	return (
 		<div { ...useBlockProps() }>
 			{ image_url && (
-				<img src={ image_url } alt={ image_alt } id={ image_id } />
+				<div
+					className={ `image ${
+						isBlobURL( image_url ) ? 'is-loading' : 'loaded'
+					}` }
+				>
+					<img src={ image_url } alt={ image_alt } id={ image_id } />
+					{ isBlobURL( image_url ) && <Spinner /> }
+				</div>
 			) }
 			<MediaPlaceholder
 				onSelect={ ( val ) =>
