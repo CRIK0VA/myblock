@@ -4,10 +4,16 @@ import {
 	MediaPlaceholder,
 	BlockControls,
 	MediaReplaceFlow,
+	InspectorControls,
 } from '@wordpress/block-editor';
 import { __ } from '@wordpress/i18n';
 import { isBlobURL } from '@wordpress/blob';
-import { Spinner, ToolbarButton } from '@wordpress/components';
+import {
+	Spinner,
+	ToolbarButton,
+	PanelBody,
+	TextControl,
+} from '@wordpress/components';
 
 export default function Edit( { attributes, setAttributes } ) {
 	const { title, description, image_id, image_url, image_alt } = attributes;
@@ -29,6 +35,20 @@ export default function Edit( { attributes, setAttributes } ) {
 
 	return (
 		<>
+			{ image_url && ! isBlobURL( image_url ) && (
+				<InspectorControls>
+					<PanelBody title={ __( 'Settings for Image', 'myblocks' ) }>
+						<TextControl
+							label={ __( 'Change Alt', 'myblocks' ) }
+							value={ image_alt }
+							help={ __( 'Change alt text', 'myblocks' ) }
+							onChange={ ( val ) =>
+								setAttributes( { image_alt: val } )
+							}
+						/>
+					</PanelBody>
+				</InspectorControls>
+			) }
 			{ image_url && (
 				<BlockControls>
 					<MediaReplaceFlow
