@@ -1,10 +1,36 @@
-import { useBlockProps, RichText } from '@wordpress/block-editor';
+import {
+	useBlockProps,
+	RichText,
+	MediaPlaceholder,
+} from '@wordpress/block-editor';
 import { __ } from '@wordpress/i18n';
 
 export default function Edit( { attributes, setAttributes } ) {
-	const { title, description } = attributes;
+	const { title, description, image_id, image_url, image_alt } = attributes;
 	return (
 		<div { ...useBlockProps() }>
+			{ image_url && (
+				<img src={ image_url } alt={ image_alt } id={ image_id } />
+			) }
+			<MediaPlaceholder
+				onSelect={ ( val ) =>
+					setAttributes( {
+						image_id: val.id,
+						image_url: val.url,
+						image_alt: val.alt,
+					} )
+				}
+				onSelectURL={ ( val ) =>
+					setAttributes( {
+						image_id: undefined,
+						image_url: val,
+						image_alt: '',
+					} )
+				}
+				accept="image/*"
+				allowedTypes={ [ 'image' ] }
+				disableMediaButtons={ image_url }
+			/>
 			<RichText
 				tagName="h2"
 				allowedFormats={ [] }
