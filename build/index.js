@@ -39,23 +39,43 @@ function Edit(_ref) {
     image_url,
     image_alt
   } = attributes;
-  return (0,_wordpress_element__WEBPACK_IMPORTED_MODULE_0__.createElement)("div", (0,_wordpress_block_editor__WEBPACK_IMPORTED_MODULE_1__.useBlockProps)(), image_url && (0,_wordpress_element__WEBPACK_IMPORTED_MODULE_0__.createElement)("div", {
+  const onSelectURL = val => {
+    setAttributes({
+      image_id: undefined,
+      image_url: val,
+      image_alt: ''
+    });
+  };
+  const onSelect = val => {
+    setAttributes({
+      image_id: val.id,
+      image_url: val.url,
+      image_alt: val.alt
+    });
+  };
+  return (0,_wordpress_element__WEBPACK_IMPORTED_MODULE_0__.createElement)(_wordpress_element__WEBPACK_IMPORTED_MODULE_0__.Fragment, null, image_url && (0,_wordpress_element__WEBPACK_IMPORTED_MODULE_0__.createElement)(_wordpress_block_editor__WEBPACK_IMPORTED_MODULE_1__.BlockControls, null, (0,_wordpress_element__WEBPACK_IMPORTED_MODULE_0__.createElement)(_wordpress_block_editor__WEBPACK_IMPORTED_MODULE_1__.MediaReplaceFlow, {
+    name: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_2__.__)('Replace Image', 'myblocks'),
+    onSelect: onSelect,
+    onSelectURL: onSelectURL,
+    accept: "image/*",
+    allowedTypes: ['image'],
+    mediaId: image_id,
+    mediaURL: image_url
+  }), (0,_wordpress_element__WEBPACK_IMPORTED_MODULE_0__.createElement)(_wordpress_components__WEBPACK_IMPORTED_MODULE_4__.ToolbarButton, {
+    onClick: () => setAttributes({
+      image_id: undefined,
+      image_url: undefined,
+      image_alt: ''
+    })
+  }, (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_2__.__)('Remove Image', 'myblocks'))), (0,_wordpress_element__WEBPACK_IMPORTED_MODULE_0__.createElement)("div", (0,_wordpress_block_editor__WEBPACK_IMPORTED_MODULE_1__.useBlockProps)(), image_url && (0,_wordpress_element__WEBPACK_IMPORTED_MODULE_0__.createElement)("div", {
     className: `image ${(0,_wordpress_blob__WEBPACK_IMPORTED_MODULE_3__.isBlobURL)(image_url) ? 'is-loading' : 'loaded'}`
   }, (0,_wordpress_element__WEBPACK_IMPORTED_MODULE_0__.createElement)("img", {
     src: image_url,
     alt: image_alt,
     id: image_id
   }), (0,_wordpress_blob__WEBPACK_IMPORTED_MODULE_3__.isBlobURL)(image_url) && (0,_wordpress_element__WEBPACK_IMPORTED_MODULE_0__.createElement)(_wordpress_components__WEBPACK_IMPORTED_MODULE_4__.Spinner, null)), (0,_wordpress_element__WEBPACK_IMPORTED_MODULE_0__.createElement)(_wordpress_block_editor__WEBPACK_IMPORTED_MODULE_1__.MediaPlaceholder, {
-    onSelect: val => setAttributes({
-      image_id: val.id,
-      image_url: val.url,
-      image_alt: val.alt
-    }),
-    onSelectURL: val => setAttributes({
-      image_id: undefined,
-      image_url: val,
-      image_alt: ''
-    }),
+    onSelect: onSelect,
+    onSelectURL: onSelectURL,
     accept: "image/*",
     allowedTypes: ['image'],
     disableMediaButtons: image_url
@@ -75,7 +95,7 @@ function Edit(_ref) {
     onChange: val => setAttributes({
       description: val
     })
-  }));
+  })));
 }
 
 /***/ }),
