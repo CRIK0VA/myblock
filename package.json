@@ -24,6 +24,8 @@
 	},
 	"dependencies": {
 		"@wordpress/block-editor": "^11.5.0",
-		"@wordpress/blocks": "^12.5.0"
+		"@wordpress/blocks": "^12.5.0",
+		"@wordpress/data": "^9.15.0",
+		"@wordpress/date": "^4.45.0"
 	}
 }
