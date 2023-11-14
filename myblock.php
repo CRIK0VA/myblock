@@ -1,8 +1,8 @@
 <?php
 /**
- * Plugin Name: My Block
+ * Plugin Name: Dynamic Posts
  * Plugin URI: https://geniuscourses.com
- * Description: Gutenberg Block
+ * Description: Gutenberg Dynamic Block
  * Author: Alex Sochirca
  * Author URI: https://geniuscourses.com
  */
