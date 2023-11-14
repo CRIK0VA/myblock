@@ -12,8 +12,8 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony export */ __webpack_require__.d(__webpack_exports__, {
 /* harmony export */   "default": () => (/* binding */ Edit)
 /* harmony export */ });
-/* harmony import */ var _wordpress_element__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! @wordpress/element */ "@wordpress/element");
-/* harmony import */ var _wordpress_element__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(_wordpress_element__WEBPACK_IMPORTED_MODULE_0__);
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react */ "react");
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_0__);
 /* harmony import */ var _wordpress_block_editor__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! @wordpress/block-editor */ "@wordpress/block-editor");
 /* harmony import */ var _wordpress_block_editor__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__webpack_require__.n(_wordpress_block_editor__WEBPACK_IMPORTED_MODULE_1__);
 /* harmony import */ var _wordpress_date__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! @wordpress/date */ "@wordpress/date");
@@ -26,10 +26,9 @@ __webpack_require__.r(__webpack_exports__);
 
 
 
-function Edit(_ref) {
-  let {
-    attributes
-  } = _ref;
+function Edit({
+  attributes
+}) {
   const {
     postsPerPage,
     showImage
@@ -41,16 +40,18 @@ function Edit(_ref) {
     });
   }, [postsPerPage]);
   const blockProps = (0,_wordpress_block_editor__WEBPACK_IMPORTED_MODULE_1__.useBlockProps)();
-  return (0,_wordpress_element__WEBPACK_IMPORTED_MODULE_0__.createElement)("div", blockProps, posts && posts.map(post => {
+  return (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("div", {
+    ...blockProps
+  }, posts && posts.map(post => {
     const featuredImage = post._embedded && post._embedded['wp:featuredmedia'] && post._embedded['wp:featuredmedia'].length > 0 && post._embedded['wp:featuredmedia'][0];
-    return (0,_wordpress_element__WEBPACK_IMPORTED_MODULE_0__.createElement)("div", {
+    return (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("div", {
       key: post.id
-    }, showImage && featuredImage && (0,_wordpress_element__WEBPACK_IMPORTED_MODULE_0__.createElement)("img", {
+    }, showImage && featuredImage && (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("img", {
       src: featuredImage.media_details.sizes.large.source_url,
       alt: featuredImage.alt_text
-    }), post.date_gmt && (0,_wordpress_element__WEBPACK_IMPORTED_MODULE_0__.createElement)("time", {
+    }), post.date_gmt && (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("time", {
       dateTime: (0,_wordpress_date__WEBPACK_IMPORTED_MODULE_2__.format)('c', post.date_gmt)
-    }, (0,_wordpress_date__WEBPACK_IMPORTED_MODULE_2__.dateI18n)((0,_wordpress_date__WEBPACK_IMPORTED_MODULE_2__.getSettings)().formats.date, post.date_gmt)), (0,_wordpress_element__WEBPACK_IMPORTED_MODULE_0__.createElement)("h2", null, (0,_wordpress_element__WEBPACK_IMPORTED_MODULE_0__.createElement)("a", {
+    }, (0,_wordpress_date__WEBPACK_IMPORTED_MODULE_2__.dateI18n)((0,_wordpress_date__WEBPACK_IMPORTED_MODULE_2__.getSettings)().formats.date, post.date_gmt)), (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("h2", null, (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("a", {
       href: post.link
     }, post.title.rendered)));
   }));
@@ -121,6 +122,16 @@ __webpack_require__.r(__webpack_exports__);
 
 /***/ }),
 
+/***/ "react":
+/*!************************!*\
+  !*** external "React" ***!
+  \************************/
+/***/ ((module) => {
+
+module.exports = window["React"];
+
+/***/ }),
+
 /***/ "@wordpress/block-editor":
 /*!*************************************!*\
   !*** external ["wp","blockEditor"] ***!
@@ -158,16 +169,6 @@ module.exports = window["wp"]["data"];
 /***/ ((module) => {
 
 module.exports = window["wp"]["date"];
-
-/***/ }),
-
-/***/ "@wordpress/element":
-/*!*********************************!*\
-  !*** external ["wp","element"] ***!
-  \*********************************/
-/***/ ((module) => {
-
-module.exports = window["wp"]["element"];
 
 /***/ })
 
