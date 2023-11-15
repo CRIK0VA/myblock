@@ -17,6 +17,18 @@
 		"showImage": {
 			"type": "boolean",
 			"default": true
+		},
+		"order": {
+			"type": "string",
+			"default": "desc"
+		},
+		"orderBy": {
+			"type": "string",
+			"default": "date"
+		},
+		"category": {
+			"type": "number",
+			"default": 1
 		}
 	}
 }

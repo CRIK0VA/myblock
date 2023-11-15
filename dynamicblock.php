@@ -10,8 +10,13 @@
  function genius_latest_posts_block($attributes){
 	$arg = array(
 		'posts_per_page' => $attributes['postsPerPage'],
-		'post_status' => 'publish'
+		'post_status' => 'publish',
+		'order' =>  $attributes['order'],
+		'orderby' =>  $attributes['orderBy'],
 	);
+	if(isset($attributes['category'])){
+		$arg['category__in'] = $attributes['category'];
+	}
 	$latest_posts = get_posts($arg);
 
 	$html = "<div ".get_block_wrapper_attributes().">";
